@@ -41,7 +41,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'pyramid',
-    ]
+    ],
     tests_require=[
         'WebTest',
         'nose',

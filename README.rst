@@ -14,7 +14,7 @@ Configuration:
 To configure routing, you have to first include this package in your pyramid app:
 
 .. code-block:: python
-    
+
     config.include('pyramid_routing')
 
 And add *routing_package* into you settings ini file. This setting should pinpoint the package containing routing.

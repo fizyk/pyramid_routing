@@ -2,9 +2,9 @@
 
 import unittest
 
-try:
+try:  # pragma: no cover
     from webtest import TestApp
-except ImportError:
+except ImportError:  # pragma: no cover
     pass
 
 
@@ -26,7 +26,7 @@ def config_factory(**settings):
     return config
 
 
-class BaseTestCase(unittest.TestCase):
+class BaseTestCase(unittest.TestCase):  # pragma : no-cover
 
     def setUp(self, routing_package):
         """Configure the Pyramid application."""
