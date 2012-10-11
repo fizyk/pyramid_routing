@@ -1,7 +1,7 @@
 Introduction:
 =============
 
-pyramid_routing is a convenience package, that helps loading routing defined and lept in separate list.
+pyramid_routing is a convenience package, that helps loading routing defined and kept in separate list.
 
 Installation:
 =============
@@ -44,4 +44,4 @@ TODOs:
 Testing:
 ========
 
-To run tests, either type ``python setup.py tests`` or ``nosetests --cover-package=pyramid_simpleauth --cover-tests --with-doctest --with-coverage``
+To run tests, either type ``python setup.py tests`` or ``nosetests --cover-package=pyramid_routing --cover-tests --with-doctest --with-coverage``
