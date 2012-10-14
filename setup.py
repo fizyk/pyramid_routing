@@ -19,9 +19,8 @@ setup(
     long_description=read('README.rst'),
     author='Grzegorz Sliwinski',
     author_email='username: fizyk, domain: fizyk.net.pl',
-    url='TBA',
+    url='https://github.com/fizyk/pyramid_routing',
     classifiers=[
-        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: Public Domain',
