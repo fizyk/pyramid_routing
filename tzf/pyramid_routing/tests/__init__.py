@@ -21,7 +21,7 @@ def config_factory(**settings):
     # Initialise the ``Configurator`` and setup a session factory.
     config = Configurator(settings=settings)
     # Include simpleauth.
-    config.include('pyramid_routing')
+    config.include('tzf.pyramid_routing')
     # Return the configurator instance.
     return config
 
@@ -43,7 +43,7 @@ class BaseTestCase(unittest.TestCase):  # pragma : no-cover
 class TestSimpleroutingPackage(BaseTestCase):
 
     def setUp(self):
-        BaseTestCase.setUp(self, 'pyramid_routing.tests.routing')
+        BaseTestCase.setUp(self, 'tzf.pyramid_routing.tests.routing')
 
     def test_read(self):
         """A test to read routes from python package"""
@@ -62,7 +62,7 @@ class TestSimpleroutingPackage(BaseTestCase):
 class TestPackagedRouting(BaseTestCase):
 
     def setUp(self):
-        BaseTestCase.setUp(self, 'pyramid_routing.tests.routing_moduled')
+        BaseTestCase.setUp(self, 'tzf.pyramid_routing.tests.routing_moduled')
 
     def test_read(self):
         """A test to read routes from python package with modules"""

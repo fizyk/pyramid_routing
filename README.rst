@@ -44,4 +44,4 @@ TODOs:
 Testing:
 ========
 
-To run tests, either type ``python setup.py tests`` or ``nosetests --cover-package=pyramid_routing --cover-tests --with-doctest --with-coverage``
+To run tests, either type ``python setup.py tests`` or ``nosetests --cover-package=tzf.pyramid_routing --cover-tests --with-doctest --with-coverage``

@@ -5,7 +5,7 @@ import re
 from setuptools import setup, find_packages
 
 here = os.path.dirname(__file__)
-with open(os.path.join(here, 'pyramid_routing', '__init__.py')) as v_file:
+with open(os.path.join(here, 'tzf', 'pyramid_routing', '__init__.py')) as v_file:
     package_version = re.compile(r".*__version__ = '(.*?)'", re.S).match(v_file.read()).group(1)
 
 
@@ -13,7 +13,7 @@ def read(fname):
     return open(os.path.join(here, fname)).read()
 
 setup(
-    name='pyramid_routing',
+    name='tzf.pyramid_routing',
     version=package_version,
     description='Package based routing definition configurator',
     long_description=read('README.rst'),
@@ -34,8 +34,9 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: WSGI',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    test_suite='pyramid_routing',
+    test_suite='tzf.pyramid_routing',
     packages=find_packages(),
+    namespace_packages=['tzf'],
     include_package_data=True,
     zip_safe=False,
     install_requires=[
