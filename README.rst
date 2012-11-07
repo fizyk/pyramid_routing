@@ -19,7 +19,7 @@ To configure routing, you have to first include this package in your pyramid app
 
 And add *routing_package* into you settings ini file. This setting should pinpoint the package containing routing.
 
-By default, routing should be defined in package's __init__.py  module and it's submodules in lists of dicts. lists should be named **routes**, and the dict format is teh same one as add_route's method.
+By default, routing should be defined in package's __init__.py  module and it's submodules in lists of dicts. lists should be named **routes**, and the dict format is the same one as add_route's method.
 
 __init__.py routes definition is read as is, and for convenience, is loaded at the end. This gives the opportunity to add routes catching all possibilities: ``/{match}``
 

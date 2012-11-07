@@ -12,15 +12,22 @@ with open(os.path.join(here, 'tzf', 'pyramid_routing', '__init__.py')) as v_file
 def read(fname):
     return open(os.path.join(here, fname)).read()
 
+test_requires = [
+    'WebTest',
+    'nose',
+    'coverage',
+]
+
 setup(
     name='tzf.pyramid_routing',
     version=package_version,
-    description='Package based routing definition configurator',
+    description='Reads and sets routing configuration from a package',
     long_description=read('README.rst'),
     author='Grzegorz Sliwinski',
     author_email='username: fizyk, domain: fizyk.net.pl',
     url='https://github.com/fizyk/pyramid_routing',
     classifiers=[
+        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: Public Domain',
@@ -34,17 +41,13 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: WSGI',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    test_suite='tzf.pyramid_routing',
     packages=find_packages(),
     namespace_packages=['tzf'],
-    include_package_data=True,
-    zip_safe=False,
     install_requires=[
         'pyramid',
     ],
-    tests_require=[
-        'WebTest',
-        'nose',
-        'coverage'
-    ]
+    tests_require=test_requires,
+    test_suite='tzf.pyramid_routing',
+    include_package_data=True,
+    zip_safe=False
 )
