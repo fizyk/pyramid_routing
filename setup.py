@@ -22,10 +22,10 @@ setup(
     name='tzf.pyramid_routing',
     version=package_version,
     description='Reads and sets routing configuration from a package',
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     author='Grzegorz Sliwinski',
     author_email='username: fizyk, domain: fizyk.net.pl',
-    url='https://github.com/fizyk/pyramid_routing',
+    url='http://packages.python.org/tzf.pyramid_routing/',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
