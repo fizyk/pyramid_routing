@@ -40,6 +40,7 @@ def includeme(config):
             route_submodule = __import__(routing_package_module.__name__ + '.' + route_submodule, fromlist=[routing_package_module.__name__])
             # for each submodule containing a list named routes, we load it, and add routes defined there to config
             if hasattr(route_submodule, 'routes'):
+                config.commit()
                 config.include(lambda config: add_route(config, route_submodule.routes), route_prefix=route_submodule.__name__.split('.')[-1])
 
         # at the end we add main package paths, to be sure they are at the end of a list in case of a /{variable} route
