@@ -82,3 +82,28 @@ class TestPackagedRouting(BaseTestCase):
         mapper = self.config.registry.getUtility(IRoutesMapper)
         routes = mapper.get_routes()
         self.assertEqual(routes[3].name, 'index', 'index route is not the fourth defined! - first of the last batch')
+
+
+class TestTwoPackagedRouting(BaseTestCase):
+
+    def setUp(self):
+        BaseTestCase.setUp(self, 'tzf.pyramid_routing.tests.routing_two_moduled')
+
+    def test_read(self):
+        """A test to read routes from python package with 2 modules"""
+        mapper = self.config.registry.getUtility(IRoutesMapper)
+        routes = mapper.get_routes()
+        self.assertTrue(len(routes), 'There should be routes!')
+        self.assertEqual(9, len(routes), 'There should be nine routes defined, you have {0}'.format(len(routes)))
+
+    def test_module_prefixed_name(self):
+        """A test to read routes from python package with 2 modules"""
+        mapper = self.config.registry.getUtility(IRoutesMapper)
+        routes = mapper.get_routes()
+        self.assertEqual(routes[3].name, 'second_index', 'There should be three routes')
+
+    def test_main_routes(self):
+        """A test to check whether main routes are added at the end with more than one additional module"""
+        mapper = self.config.registry.getUtility(IRoutesMapper)
+        routes = mapper.get_routes()
+        self.assertEqual(routes[6].name, 'index', 'index route is not the fourth defined! - first of the last batch')
