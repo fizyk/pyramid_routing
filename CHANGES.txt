@@ -1,0 +1,9 @@
+0.0.2
+---
+
+-  resolved issue with package submodule loading
+
+0.0.1
+---
+
+-  main functionality
