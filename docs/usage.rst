@@ -31,8 +31,8 @@ Module-defined routes will be loaded first, with module name as their prefix. If
 .. code-block:: python
 
         routes = [
-            dict(name='blog:index', pattern='/'),
-            dict(name='blog:show', pattern="/show"),
+            {'name': 'blog:index', 'pattern':'/'},
+            {'name':'blog:show', 'pattern':'/show'},
         ]
 
 **blog:index** path will be */blog/*, while **blog:show** will become /blog/show
