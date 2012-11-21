@@ -23,7 +23,7 @@ setup(
     version=package_version,
     description='Reads and sets routing configuration from a package',
     long_description=(
-        read('README.txt')
+        read('README.rst')
         + '\n\n' +
         read('CHANGES.txt')
     ),
