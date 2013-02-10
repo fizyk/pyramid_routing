@@ -1,8 +1,3 @@
-.. tzf.pyramid_routing documentation master file, created by
-   sphinx-quickstart on Thu Nov  8 20:47:06 2012.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Introduction
 ============
 
@@ -16,13 +11,6 @@ Contents
 
    install
    usage
-
-.. Indices and tables
-.. ==================
-
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`
 
 
 Testing

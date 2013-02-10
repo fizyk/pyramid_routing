@@ -19,6 +19,20 @@ And add **routing_package** into you settings *ini* file. This setting should pi
         routing_package = my.package.lib.routing
         # ....
 
+If You use routing package in other pyramid module, you need this package via normal import:
+
+.. code-block:: python
+
+    from tzf.pyramid_routing import routes_from_package
+    routes_from_package(config, 'module.lib.routing')
+    config.commit()
+
+.. warning::
+
+    Depending on the order of including plugins, you should add config.commit() between pyramid_routing inclusion, and the other module, that uses it.
+
+    Although, It doesn't give errors in all cases. Investigation is needed.
+
 Defining routes
 ---------------
 
@@ -36,3 +50,6 @@ Module-defined routes will be loaded first, with module name as their prefix. If
         ]
 
 **blog:index** path will be */blog/*, while **blog:show** will become /blog/show
+
+Using pyramid_routing separately
+--------------------------------
