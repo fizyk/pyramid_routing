@@ -25,14 +25,14 @@ setup(
     long_description=(
         read('README.rst')
         + '\n\n' +
-        read('CHANGES.txt')
+        read('CHANGES.rst')
     ),
     keywords='pyramid routing',
     author='Grzegorz Sliwinski',
     author_email='username: fizyk, domain: fizyk.net.pl',
     url='https://github.com/fizyk/pyramid_routing',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'License :: Public Domain',

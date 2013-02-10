@@ -30,6 +30,5 @@ Code can be found on github: https://github.com/fizyk/pyramid_routing
 TODOs
 =====
 
-- read from all lists within package (with list name becoming routes prefix)
-- read routing from yml configuration
-- remove trailing slash if only it is set
+For full list of todos, please visit github issues:
+https://github.com/fizyk/pyramid_routing/issues?state=open
