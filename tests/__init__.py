@@ -85,7 +85,7 @@ class TestPackagedRouting(BaseTestCase):
         self.assertEqual(routes[3].name, 'index', 'index route is not the fourth defined! - first of the last batch')
 
 
-class TestNoIncludeMeRouting(BaseTestCase):
+class TestMultiSubmoduledRouting(BaseTestCase):
 
     def setUp(self):
         BaseTestCase.setUp(self, 'tests.routing_two_moduled')
@@ -101,13 +101,47 @@ class TestNoIncludeMeRouting(BaseTestCase):
         '''A test to read routes from python package with 2 modules'''
         mapper = self.config.registry.getUtility(IRoutesMapper)
         routes = mapper.get_routes()
-        self.assertEqual(routes[3].name, 'second_index', 'There should be three routes')
+        self.assertEqual(routes[3].name, 'second_index', 'name should be second_index is {0}'.format(routes[3].name))
+        self.assertEqual(routes[3].pattern, 'second/', 'pattern should be second/ is {0}'.format(routes[3].pattern))
+        self.assertEqual(routes[4].pattern, 'second/secret', 'pattern should be second/secret is {0}'.format(routes[3].pattern))
 
     def test_main_routes(self):
         '''A test to check whether main routes are added at the end with more than one additional module'''
         mapper = self.config.registry.getUtility(IRoutesMapper)
         routes = mapper.get_routes()
         self.assertEqual(routes[6].name, 'index', 'index route is not the fourth defined! - first of the last batch')
+
+
+
+class TestPrefixedRouting(BaseTestCase):
+    '''
+        These tests are for custom prefix testing
+    '''
+    def setUp(self):
+        BaseTestCase.setUp(self, 'tests.routing_prefixed')
+
+    def test_read(self):
+        '''Read prefixed routes with 2 submodules'''
+        mapper = self.config.registry.getUtility(IRoutesMapper)
+        routes = mapper.get_routes()
+        self.assertTrue(len(routes), 'There should be routes!')
+        self.assertEqual(9, len(routes), 'There should be nine routes defined, you have {0}'.format(len(routes)))
+
+    def test_module_prefixed_name(self):
+        '''Check prefixed route values from submodule'''
+        mapper = self.config.registry.getUtility(IRoutesMapper)
+        routes = mapper.get_routes()
+        self.assertEqual(routes[0].name, 'module_index', 'name should be module_index is {0}'.format(routes[1].name))
+        self.assertEqual(routes[0].pattern, '{var}/', 'pattern should be {1} is {0}'.format(routes[1].pattern, '{var}/'))
+        self.assertEqual(routes[1].pattern, '{var}/secret', 'pattern should be {1} is {0}'.format(routes[2].pattern, '{var}/secret'))
+
+    def test_module_prefixed_name_with_variable(self):
+        '''Check prefixed route values from submodule with long prefix'''
+        mapper = self.config.registry.getUtility(IRoutesMapper)
+        routes = mapper.get_routes()
+        self.assertEqual(routes[3].name, 'second_index', 'name should be second_index is {0}'.format(routes[3].name))
+        self.assertEqual(routes[3].pattern, '{var}/subpath/', 'pattern should be {1} is {0}'.format(routes[3].pattern, '{var}/subpath/'))
+        self.assertEqual(routes[4].pattern, '{var}/subpath/secret', 'pattern should be {1} is {0}'.format(routes[3].pattern, '{var}/subpath/secret'))
 
 
 class TestSimpleRoutingByHand(BaseTestCase):
