@@ -51,11 +51,16 @@ def routes_from_package(configurator, routing_package_path):
             if hasattr(route_submodule, 'routes'):
                 # actually borrowing some code from Configurator's.includeme
 
+                if hasattr(route_submodule, 'prefix'):
+                    route_prefix = route_submodule.prefix
+                else:
+                    route_prefix = route_submodule.__name__.split('.')[-1]
+
                 sub_configurator = configurator.__class__(
                     registry=configurator.registry,
                     package=package_of(route_submodule),
                     autocommit=configurator.autocommit,
-                    route_prefix=route_submodule.__name__.split('.')[-1],
+                    route_prefix=route_prefix,
                 )
                 add_routes(sub_configurator, route_submodule.routes)
 
