@@ -18,6 +18,10 @@ test_requires = [
     'coverage',
 ]
 
+extras_require = {
+    'docs': ['sphinx', 'sphinx_bootstrap_theme'],
+}
+
 setup(
     name='tzf.pyramid_routing',
     version=package_version,
@@ -55,4 +59,5 @@ setup(
     test_suite='tzf.pyramid_routing',
     include_package_data=True,
     zip_safe=False,
+    extras_require=extras_require,
 )
