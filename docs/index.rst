@@ -19,7 +19,7 @@ Testing
 To run tests you'll need *webtest* package
 
 - ``$ python setup.py tests``
-- ``$ nosetests --cover-package=tzf.pyramid_routing --cover-tests --with-doctest --with-coverage``
+- ``$ python setup.py nosetests``
 
 Code
 ====

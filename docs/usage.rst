@@ -44,12 +44,25 @@ Module-defined routes will be loaded first, with module name as their prefix. If
 
 .. code-block:: python
 
-        routes = [
-            {'name': 'blog:index', 'pattern':'/'},
-            {'name':'blog:show', 'pattern':'/show'},
-        ]
+    routes = [
+        {'name': 'blog:index', 'pattern':'/'},
+        {'name':'blog:show', 'pattern':'/show'},
+    ]
 
 **blog:index** path will be */blog/*, while **blog:show** will become /blog/show
 
-Using pyramid_routing separately
---------------------------------
+Redefining route prefix
++++++++++++++++++++++++
+
+Route prefix for routing submodules reflects the submodule name. But if you require some more fancy name (Possibly a variable, that is beeing set by default), you can do so, by defining a prefix variable on that module:
+
+.. code-block:: python
+
+    prefix = '{locale}/blog'
+
+    routes = [
+        {'name': 'blog:index', 'pattern':'/'},
+        {'name':'blog:show', 'pattern':'/show'},
+    ]
+
+**blog:index** path now will be *{locale}/blog/*, while **blog:show** will become {locale}/blog/show. Of course, the /blog part in prefix can be totally missed.
