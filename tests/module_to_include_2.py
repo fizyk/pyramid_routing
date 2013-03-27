@@ -5,4 +5,4 @@ def includeme(config):
     '''
         Full includeme
     '''
-    routes_from_package(config, 'tzf.pyramid_routing.tests.routing_to_include_2')
+    routes_from_package(config, 'tests.routing_to_include_2')

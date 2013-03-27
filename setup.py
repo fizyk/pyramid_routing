@@ -56,7 +56,7 @@ setup(
         'pyramid',
     ],
     tests_require=test_requires,
-    test_suite='tzf.pyramid_routing',
+    test_suite='tests',
     include_package_data=True,
     zip_safe=False,
     extras_require=extras_require,
