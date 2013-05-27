@@ -8,4 +8,4 @@ install:
     - "python setup.py install"
     - "pip install tzf.pyramid_routing[tests] --use-mirrors"
 script:
-    - nosetetests
+    - nosetests
