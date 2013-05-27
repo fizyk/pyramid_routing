@@ -8,6 +8,6 @@ install:
     - "python setup.py install"
     - "pip install tzf.pyramid_routing[tests] coveralls --use-mirrors"
 script:
-    - "python setup.py nosetests"
+    - coverage run --source=tzf.pyramid_routing setup.py nosetests
 after_success:
     - coveralls
