@@ -5,6 +5,7 @@ CHANGES
 current
 -------
 - MIT License and Authors
+- fixes for python 3.3
 
 0.0.4
 -----

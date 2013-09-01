@@ -44,14 +44,18 @@ def routes_from_package(configurator, routing_package_path):
 
     if routing_package_path is not None:
         # importing routing package
-        routing_package_module = __import__(routing_package_path, fromlist=[routing_package_path])
+        # import ipdb
+        # ipdb.set_trace()
+        routing_package_module = __import__(routing_package_path,
+                                            fromlist=[routing_package_path.rsplit('.')[0]])
 
         # loading submodules
         routing_submodules = [package[1] for package in pkgutil.iter_modules([os.path.dirname(routing_package_module.__file__)]) if not package[2]]
 
         # we load submodules if any
         for route_submodule in routing_submodules:
-            route_submodule = __import__(routing_package_module.__name__ + '.' + route_submodule, fromlist=[routing_package_module.__name__])
+            route_submodule = __import__(routing_package_module.__name__ + '.' + route_submodule,
+                                         fromlist=[routing_package_module.__name__])
             # for each submodule containing a list named routes, we load it, and add routes defined there to config
             if hasattr(route_submodule, 'routes'):
                 # actually borrowing some code from Configurator's.includeme
