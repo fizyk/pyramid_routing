@@ -2,6 +2,10 @@
 CHANGES
 =======
 
+current
+-------
+- MIT License and Authors
+
 0.0.4
 -----
 
