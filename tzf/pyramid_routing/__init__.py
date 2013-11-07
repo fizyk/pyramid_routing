@@ -24,7 +24,7 @@ def add_routes(configurator, route_list):
         configurator.add_route(**route)
 
 
-def includeme(configurator, routing_package=None):
+def includeme(configurator):
     '''
         Adds rotues defined in config into pyramid app
 
