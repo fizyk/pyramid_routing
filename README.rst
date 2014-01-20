@@ -2,14 +2,6 @@
 tzf.pyramid_routing README
 ==========================
 
-.. image:: https://travis-ci.org/fizyk/pyramid_routing.png?branch=master
-    :target: https://travis-ci.org/fizyk/pyramid_routing
-    :alt: Tests
-
-.. image:: https://coveralls.io/repos/fizyk/pyramid_routing/badge.png?branch=master
-    :target: https://coveralls.io/r/fizyk/pyramid_routing?branch=master
-    :alt: Coverage Status
-
 .. image:: https://pypip.in/v/tzf.pyramid_routing/badge.png
     :target: https://pypi.python.org/pypi/tzf.pyramid_routing/
     :alt: Latest PyPI version
@@ -30,9 +22,16 @@ tzf.pyramid_routing README
     :target: https://pypi.python.org/pypi/tzf.pyramid_routing/
     :alt: License
 
-.. image:: https://requires.io/github/fizyk/pyramid_routing/requirements.png?branch=master
-   :target: https://requires.io/github/fizyk/pyramid_routing/requirements/?branch=master
-   :alt: Requirements Status
+Package status
+--------------
+
+.. image:: https://travis-ci.org/fizyk/pyramid_routing.png?branch=master
+    :target: https://travis-ci.org/fizyk/pyramid_routing
+    :alt: Tests
+
+.. image:: https://coveralls.io/repos/fizyk/pyramid_routing/badge.png?branch=master
+    :target: https://coveralls.io/r/fizyk/pyramid_routing?branch=master
+    :alt: Coverage Status
 
 .. image:: https://requires.io/github/fizyk/pyramid_routing/requirements.png?branch=master
    :target: https://requires.io/github/fizyk/pyramid_routing/requirements/?branch=master
