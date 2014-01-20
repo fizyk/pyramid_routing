@@ -4,6 +4,10 @@ CHANGES
 
 current
 -------
+- rewritten tests to py.test
+
+0.1.0
+-----
 - MIT License and Authors
 - fixes for python 3.3
 

@@ -28,4 +28,4 @@ Documentation can be found here: http://packages.python.org/tzf.pyramid_routing
 Testing
 -------
 
-To run tests, either type ``python setup.py tests`` or ``python setup.py nosetests``
+To run tests install extra dependencies from **tests** group and simply type ``py.test``
