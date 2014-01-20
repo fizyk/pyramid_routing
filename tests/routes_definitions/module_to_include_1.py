@@ -5,4 +5,4 @@ def includeme(config):
     '''
         Full includeme
     '''
-    routes_from_package(config, 'tests.routing_to_include_2')
+    routes_from_package(config, 'tests.routes_definitions.routing_to_include_1')

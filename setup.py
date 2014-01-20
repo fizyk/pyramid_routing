@@ -13,9 +13,9 @@ def read(fname):
     return open(os.path.join(here, fname)).read()
 
 test_requires = [
-    'WebTest',
-    'nose',
-    'coverage',
+    'pytest',
+    'pytest_pyramid >=0.1.1',
+    'pytest-cov',
 ]
 
 extras_require = {
