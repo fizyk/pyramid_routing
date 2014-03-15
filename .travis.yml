@@ -11,3 +11,14 @@ script:
     - "py.test --cov tzf.pyramid_routing tests/"
 after_success:
     - coveralls
+
+# deploy section
+deploy:
+    provider: pypi
+    user: fizyk
+    password:
+        secure: OSLxLtm6QWvQ8VqtDZJ4WHBcV+qltywELCBdZbjw+P4qxbokSXGJeDTGVBYQepdSLi1P6wv9R3FdAiYZppMaLhoBWZPs62VCDFZdHNPjXKrbNFCObo9qa3PQv23q6mkg8R3oHBB+nupL8ST3LWaQIJLP5QEiQ9jxuXPbSyhydQ8=
+    on:
+        tags: true
+        repo: fizyk/pyramid_routing
+    distributions: "sdist bdist bdist_wheel"
