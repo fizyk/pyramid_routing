@@ -2,7 +2,11 @@
 CHANGES
 =======
 
-current
+0.1.2
+-----
+- introduced pylama for running code linters
+
+0.1.1
 -------
 - rewritten tests to py.test
 
