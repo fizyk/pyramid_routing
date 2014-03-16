@@ -11,7 +11,7 @@ import pkgutil
 from pyramid.path import package_of
 
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 
 def add_routes(configurator, route_list):
