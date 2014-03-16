@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+"""Test's routes definition in submodules."""
 
 routes = [
     dict(name='index', pattern='/'),

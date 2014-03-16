@@ -1,3 +1,5 @@
+"""Test's routes definition."""
+
 prefix = '{var}'
 
 routes = [
