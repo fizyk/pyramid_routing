@@ -1,3 +1,6 @@
+"""Tests conftest module."""
+
+
 from pytest_pyramid import factories
 
 clean_config = factories.pyramid_config({})

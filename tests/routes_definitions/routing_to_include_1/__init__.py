@@ -1,3 +1,5 @@
+"""Test's routes definition."""
+
 routes = [
     dict(name='module_index', pattern='/'),
     dict(name='module_secret', pattern="/secret"),
