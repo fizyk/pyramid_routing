@@ -34,7 +34,6 @@ def includeme(configurator):
     :param pyramid.config.Configurator configurator: pyramid's app configurator
 
     """
-
     routes_from_package(
         configurator, configurator.registry.settings['routing_package'])
 
@@ -47,7 +46,6 @@ def routes_from_package(configurator, routing_package_path):
     :param str routing_package_path: routing package to include
 
     """
-
     if routing_package_path is not None:
         # importing routing package
         routing_package_module = __import__(
