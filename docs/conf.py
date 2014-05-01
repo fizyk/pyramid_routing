@@ -50,7 +50,7 @@ copyright = u'2012, Grzegorz Śliwiński'
 #
 # The short X.Y version.
 
-from pytest_pyramid import __version__
+from tzf.pyramid_routing import __version__
 
 # The full version, including alpha/beta/rc tags.
 release = __version__
