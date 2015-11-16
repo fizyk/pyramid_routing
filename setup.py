@@ -38,9 +38,7 @@ setup(
     version=package_version,
     description='Reads and sets routing configuration from a package',
     long_description=(
-        read('README.rst')
-        + '\n\n' +
-        read('CHANGES.rst')
+        read('README.rst') + '\n\n' + read('CHANGES.rst')
     ),
     keywords='pyramid routing',
     author='Grzegorz Sliwinski',
