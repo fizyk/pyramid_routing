@@ -1,15 +1,17 @@
 language: python
+os:
+  - linux
 python:
     - "2.6"
     - "2.7"
-    - "3.2"
     - "3.3"
     - "3.4"
+    - "3.5"
 install:
     - "python setup.py install"
-    - "pip install tzf.pyramid_routing[tests] coveralls pylama --use-mirrors"
+    - "pip install tzf.pyramid_routing[tests] coveralls pylama"
 script:
-    - "py.test --cov tzf.pyramid_routing tests/"
+    - "py.test -v --cov tzf.pyramid_routing tests/"
     - "pylama"
 after_success:
     - coveralls
