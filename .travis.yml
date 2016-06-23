@@ -9,8 +9,9 @@ python:
     - "3.4"
     - "3.5"
 install:
+    - "pip install -r requirements-test.txt"
     - "python setup.py install"
-    - "pip install tzf.pyramid_routing[tests] coveralls pylama"
+    - "pip install tzf.pyramid_routing[tests] coveralls"
 script:
     - "py.test -v --cov tzf.pyramid_routing tests/"
     - "pylama"

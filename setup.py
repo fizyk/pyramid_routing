@@ -23,9 +23,9 @@ def read(fname):
     return open(os.path.join(here, fname)).read()
 
 test_requires = [
-    'pytest',
-    'pytest_pyramid >=0.1.1',
-    'pytest-cov',
+    'pytest==2.9.2',
+    'pytest_pyramid==0.2.0',
+    'pytest-cov==2.2.1',
 ]
 
 extras_require = {
