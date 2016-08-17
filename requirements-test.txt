@@ -5,4 +5,4 @@ pep8==1.7.0
 pyflakes==1.2.3
 mccabe==0.5.2
 pep257==0.7.0
-pyramid==1.7.2
+pyramid==1.7.3
