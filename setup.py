@@ -23,7 +23,7 @@ def read(fname):
     return open(os.path.join(here, fname)).read()
 
 test_requires = [
-    'pytest==2.9.2',
+    'pytest==3.0.0',
     'pytest_pyramid==0.2.0',
     'pytest-cov==2.3.1',
 ]
