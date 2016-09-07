@@ -50,7 +50,7 @@ def test_routename(request, config_fixture, route_number, name, pattern):
 
 
 def test_by_hand_only(clean_config):
-    """run includeme by hand."""
+    """Run includeme by hand."""
     config = clean_config
     config.commit()
     from tzf.pyramid_routing import routes_from_package
