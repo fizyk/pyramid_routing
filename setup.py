@@ -22,6 +22,7 @@ def read(fname):
     """
     return open(os.path.join(here, fname)).read()
 
+
 test_requires = [
     'pytest==3.0.3',
     'pytest_pyramid==0.2.0',
