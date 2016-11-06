@@ -1,14 +1,9 @@
 """tzf.pyramid_routing installation file."""
 
 import os
-import re
 from setuptools import setup, find_packages
 
 here = os.path.dirname(__file__)
-with open(
-        os.path.join(here, 'tzf', 'pyramid_routing', '__init__.py')) as v_file:
-    package_version = re.compile(
-        r".*__version__ = '(.*?)'", re.S).match(v_file.read()).group(1)
 
 
 def read(fname):
@@ -21,6 +16,7 @@ def read(fname):
 
     """
     return open(os.path.join(here, fname)).read()
+
 
 test_requires = [
     'pytest==3.0.3',
@@ -35,7 +31,7 @@ extras_require = {
 
 setup(
     name='tzf.pyramid_routing',
-    version=package_version,
+    version='0.1.2',
     description='Reads and sets routing configuration from a package',
     long_description=(
         read('README.rst') + '\n\n' + read('CHANGES.rst')
