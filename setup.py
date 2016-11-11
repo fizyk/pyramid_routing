@@ -19,7 +19,7 @@ def read(fname):
 
 
 test_requires = [
-    'pytest==3.0.3',
+    'pytest==3.0.4',
     'pytest_pyramid==0.2.0',
     'pytest-cov==2.4.0',
 ]
