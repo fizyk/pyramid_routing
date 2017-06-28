@@ -91,7 +91,7 @@ def test_includeme_and_by_hand_with_includeme(simplerouting_config):
     config.commit()
 
     def includeme_test(config):
-        """Method for testing includeme."""
+        """Configure routes in test."""
         from tzf.pyramid_routing import routes_from_package
         routes_from_package(config, 'tests.routes_definitions.routing_moduled')
 
