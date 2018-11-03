@@ -3,6 +3,8 @@
 
 from pytest_pyramid import factories
 
+# pylint:disable=invalid-name
+
 clean_config = factories.pyramid_config({})
 
 simplerouting_config = factories.pyramid_config({
