@@ -19,7 +19,7 @@ def test_read_count(request, config_fixture, route_count):
 
     mapper = config.registry.getUtility(IRoutesMapper)
     routes = mapper.get_routes()
-    assert len(routes) > 0
+    assert routes
     assert len(routes) == route_count
 
 
