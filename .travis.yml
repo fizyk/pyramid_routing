@@ -1,34 +1,46 @@
 language: python
 sudo: false
 os:
-  - linux
+- linux
 python:
-    - "2.7"
-    - "3.3"
-    - "3.4"
-    - "3.5"
-    - "3.6"
+- "2.7"
+- "3.4"
+- "3.5"
+- "3.6"
 # blocklist branches
 branches:
   except:
   - requires-io-master
 install:
-    - "pip install -r requirements-test.txt"
-    - "python setup.py install"
-    - "pip install tzf.pyramid_routing[tests] coveralls"
+- pip install -r requirements-test.txt
+- pip install .[tests] coveralls
 script:
-    - "py.test -v --cov tzf.pyramid_routing tests/"
-    - "pylama"
+- py.test -v --cov tzf.pyramid_routing tests/
 after_success:
-    - coveralls
-
-# deploy section
-deploy:
-    provider: pypi
-    user: fizyk
-    password:
+- coveralls
+jobs:
+  include:
+  - stage: linters
+    python: 3.6
+    install:
+    - pip install -r requirements-lint.txt
+    - pip install .[tests]
+    script:
+    - pycodestyle
+    - pydocstyle
+    - pylint tzf.pyramid_routing tests
+    after_success: skip
+  - stage: deploy
+    python: 3.6
+    if: tag IS present
+    script: skip
+    # deploy section
+    deploy:
+      provider: pypi
+      user: fizyk
+      password:
         secure: OSLxLtm6QWvQ8VqtDZJ4WHBcV+qltywELCBdZbjw+P4qxbokSXGJeDTGVBYQepdSLi1P6wv9R3FdAiYZppMaLhoBWZPs62VCDFZdHNPjXKrbNFCObo9qa3PQv23q6mkg8R3oHBB+nupL8ST3LWaQIJLP5QEiQ9jxuXPbSyhydQ8=
-    on:
+      on:
         tags: true
         repo: fizyk/pyramid_routing
-    distributions: "sdist bdist bdist_wheel"
+      distributions: bdist_wheel
