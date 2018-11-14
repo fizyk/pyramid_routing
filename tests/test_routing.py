@@ -12,7 +12,7 @@ from pyramid.interfaces import IRoutesMapper
 ))
 def test_read_count(request, config_fixture, route_count):
     """A test to read routes from python package."""
-    config = request.getfuncargvalue(config_fixture)
+    config = request.getfixturevalue(config_fixture)
 
     # actually needed to be able tu use getUtility
     config.commit()
@@ -38,7 +38,7 @@ def test_read_count(request, config_fixture, route_count):
 ))
 def test_routename(request, config_fixture, route_number, name, pattern):
     """A test to check whether index is the first route."""
-    config = request.getfuncargvalue(config_fixture)
+    config = request.getfixturevalue(config_fixture)
 
     # actually needed to be able tu use getUtility
     config.commit()
