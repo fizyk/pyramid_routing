@@ -53,6 +53,7 @@ def test_by_hand_only(clean_config):
     """Run includeme by hand."""
     config = clean_config
     config.commit()
+    # pylint:disable=import-outside-toplevel
     from tzf.pyramid_routing import routes_from_package
 
     routes_from_package(config, 'tests.routes_definitions.routing')
@@ -64,7 +65,7 @@ def test_includeme_and_by_hand(simplerouting_config):
     """config.include and by hand in app."""
     config = simplerouting_config
     config.commit()
-
+    # pylint:disable=import-outside-toplevel
     from tzf.pyramid_routing import routes_from_package
 
     routes_from_package(config, 'tests.routes_definitions.routing_moduled')
@@ -92,6 +93,7 @@ def test_includeme_and_by_hand_with_includeme(simplerouting_config):
 
     def includeme_test(config):
         """Configure routes in test."""
+        # pylint:disable=import-outside-toplevel
         from tzf.pyramid_routing import routes_from_package
         routes_from_package(config, 'tests.routes_definitions.routing_moduled')
 
